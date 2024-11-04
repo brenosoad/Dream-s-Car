@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda - Fusca</title>
+    <meta name="description" content="Venda do Fusca, veículo clássico da Volkswagen.">
+    <meta name="keywords" content="Fusca, venda, carro, Volkswagen, DREAM CAR'S">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-primaria: #000000;
+            --cor-secundaria: #333333;
+            --cor-fundo: #f4f4f4;
+            --cor-texto: #ffffff;
+            --cor-texto-escuro: #222222;
+            --cor-acento: #FFAA00;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--cor-texto-escuro);
+            background-color: var(--cor-fundo);
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: var(--cor-texto);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: color 0.3s, background 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--cor-fundo);
+            background: var(--cor-acento);
+        }
+
+        .hero {
+            background: url('https://i0.wp.com/thegarage.com.br/wp-content/uploads/2023/02/1968-VW-Fusca-1300-a-venda-the-garage-33.jpg?ssl=1') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            color: var(--cor-texto);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1;
+        }
+
+        .hero h1 {
+            z-index: 2;
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .hero h2 {
+            z-index: 2;
+            font-size: 1.8em;
+            color: var(--cor-acento);
+            font-weight: 600;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .car-image {
+            width: 50%;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .car-details {
+            width: 50%;
+        }
+
+        .preco {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--cor-primaria);
+            margin: 20px 0;
+            text-align: center;
+            background-color: var(--cor-acento);
+            padding: 15px;
+            border-radius: 5px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        h2 {
+            color: var(--cor-texto-escuro);
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        .comprar-btn {
+            padding: 15px 25px;
+            background-color: var(--cor-acento);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .comprar-btn:hover {
+            background-color: var(--cor-primaria);
+            transform: scale(1.05);
+        }
+
+        .detalhes-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid var(--cor-secundaria);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--cor-acento);
+            color: white;
+        }
+
+        .video-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .comentarios {
+            margin-top: 30px;
+            border-top: 2px solid var(--cor-secundaria);
+            padding-top: 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .comentarios-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .comentario-card {
+            background: white;
+            border: 1px solid var(--cor-secundaria);
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            width: calc(45% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .comentario-card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .historico, .faq {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.historico h2, .faq h2 {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-acento);
+    padding-bottom: 10px;
+}
+
+.faq h3 {
+    margin: 15px 0 5px;
+    color: var(--cor-secundaria);
+}
+
+.faq p {
+    margin: 0 0 15px;
+    line-height: 1.5;
+    color: var(--cor-texto-escuro);
+}
+
+.comentario-card {
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s;
+}
+
+.comentario-card:hover {
+    transform: scale(1.02);
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DREAM CAR'S</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="financiamento.html">Financiamento</a></li>
+                <li><a href="vender.html">Vender Seu Carro</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Fusca</h1>
+        <h2>Veículo Clássico da Volkswagen</h2>
+    </section>
+
+    <div class="container">
+        <div class="info-container">
+            <img src="https://i.imgur.com/gGFZw6r.png" alt="Fusca" class="car-image">
+            <div class="car-details">
+                <p class="preco">R$ 30.000,00</p>
+                <h2>Descrição</h2>
+                <p>Clássico, conhecido por seu design icônico e durabilidade. O Fusca é um verdadeiro símbolo da cultura automobilística, perfeito para quem busca estilo e história.</p>
+                <a href="comprar.html" class="comprar-btn">Comprar Agora</a>
+            </div>
+        </div>
+
+        <div class="detalhes-container">
+            <h2>Detalhes do Veículo</h2>
+            <table>
+                <tr>
+                    <th>Marca</th>
+                    <td>Volkswagen</td>
+                </tr>
+                <tr>
+                    <th>Ano</th>
+                    <td>1970</td>
+                </tr>
+                <tr>
+                    <th>Quilometragem</th>
+                    <td>130.000 km</td>
+                </tr>
+                <tr>
+                    <th>Cores Disponíveis</th>
+                    <td>Preto, Branco, Vermelho</td>
+                </tr>
+                <tr>
+                    <th>Tipo de Combustível</th>
+                    <td>Gasolina</td>
+                </tr>
+                <tr>
+                    <th>Transmissão</th>
+                    <td>Manual</td>
+                </tr>
+                <tr>
+                    <th>Potência</th>
+                    <td>50 cv</td>
+                </tr>
+                <tr>
+                    <th>Direção</th>
+                    <td>Manual</td>
+                </tr>
+                <tr>
+                    <th>Documentação</th>
+                    <td>IPVA pago, sem multas</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="video-container">
+            <h2>Assista ao Vídeo</h2>
+            <iframe src="https://www.flexclip.com/pt/share/7184932b087fc20435a002fdbd6e69417ebcfbb.html" title="Vídeo sobre o Fusca" allowfullscreen></iframe>
+            <p>Descubra tudo sobre o Fusca neste vídeo emocionante que destaca suas características e história.</p>
+        </div>
+
+        <div class="comentarios">
+            <h2>Comentários sobre o Fusca</h2>
+            <div class="comentarios-container">
+                <div class="comentario-card">
+                    <p>"O Fusca é o carro dos meus sonhos! Incrível!" - Ana</p>
+                </div>
+                <div class="comentario-card">
+                    <p>"Um clássico que nunca sai de moda!" - Carlos</p>
+                </div>
+                <div class="comentario-card">
+                    <p>"Simplesmente perfeito para passeios!" - Maria</p>
+                </div>
+                <div class="comentario-card">
+                    <p>"Um carro com história e charme!" - João</p>
+                </div>
+                <div class="comentario-card">
+                    <p>"Adoro dirigir meu Fusca!" - Pedro</p>
+                </div>
+                <div class="comentario-card">
+                    <p>"Não trocaria por nenhum outro carro!" - Lucia</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="historico">
+            <h2>História do Fusca</h2>
+            <p>O Fusca, conhecido mundialmente como Volkswagen Beetle, foi projetado na Alemanha nos anos 30, com a intenção de ser um carro acessível e prático para todos. Lançado em 1938, ele rapidamente se tornou um símbolo de liberdade e contracultura, especialmente durante os anos 60. Com seu design icônico e motor traseiro, o Fusca se destacou em diversas competições automotivas e se consolidou como um dos carros mais vendidos da história. Sua produção se estendeu até 2003, totalizando mais de 21 milhões de unidades fabricadas, fazendo dele um verdadeiro clássico da indústria automobilística.</p>
+            <p>Hoje, o Fusca é um objeto de desejo para colecionadores e entusiastas, representando não apenas um veículo, mas uma parte importante da história automotiva.</p>
+        </div>
+        
+        <div class="faq">
+            <h2>Perguntas Frequentes</h2>
+            <h3>1. O Fusca é fácil de manter?</h3>
+            <p>Sim, o Fusca possui uma mecânica simples e peças de reposição amplamente disponíveis, o que facilita a manutenção e torna os custos mais acessíveis. A maioria dos mecânicos é familiarizada com o modelo, garantindo um atendimento de qualidade.</p>
+            
+            <h3>2. Quais são as opções de financiamento disponíveis?</h3>
+            <p>Oferecemos várias opções de financiamento personalizadas, incluindo parcelamento e consórcio. Nossa equipe está pronta para ajudar a encontrar a melhor solução para seu orçamento e necessidades.</p>
+            
+            <h3>3. O Fusca tem peças de reposição disponíveis?</h3>
+            <p>Sim! Existem muitos fornecedores de peças de reposição, tanto novas quanto usadas, permitindo que os proprietários mantenham seus veículos em excelentes condições. Além disso, várias lojas online especializadas oferecem uma ampla gama de componentes.</p>
+            
+            <h3>4. Qual é a eficiência de combustível do Fusca?</h3>
+            <p>O Fusca é conhecido por sua eficiência de combustível, fazendo cerca de 10 a 12 km/l, dependendo da condição do veículo e do estilo de condução. Isso o torna uma opção econômica para quem busca um carro clássico.</p>
+            
+            <h3>5. Posso personalizar meu Fusca?</h3>
+            <p>Com certeza! Muitos proprietários optam por personalizar seus Fuscas, seja através de pintura, adesivos, ou até modificações no motor e suspensão. Há uma comunidade ativa de entusiastas disposta a compartilhar dicas e ideias de personalização.</p>
+        </div>               
+    </div>
+
+    <footer style="background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%); color: var(--cor-texto); text-align: center; padding: 20px; border-top: 3px solid var(--cor-acento); font-family: 'Montserrat', sans-serif;">
+        <p style="margin: 5px 0;">&copy; 2024 DREAM CAR'S. Todos os direitos reservados.</p>
+        
+        <div id="contato" style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Contato</h3>
+            <p>Email: <a href="mailto:contato@dreamcars.com" style="color: var(--cor-acento); text-decoration: none;" title="Enviar email para contato@dreamcars.com">contato@dreamcars.com</a></p>
+        </div>
+        
+        <div style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Siga-nos</h3>
+            <a href="https://www.facebook.com/dreamcars" aria-label="Facebook" title="Siga-nos no Facebook" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png" alt="Ícone do Facebook" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://www.instagram.com/dreamcars" aria-label="Instagram" title="Siga-nos no Instagram" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Ícone do Instagram" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://wa.me/5511999999999" aria-label="WhatsApp" title="Entre em contato pelo WhatsApp" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Ícone do WhatsApp" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://twitter.com/dreamcars" aria-label="Twitter" title="Siga-nos no Twitter" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://freepnglogo.com/images/all_img/1691832581twitter-x-icon-png.png" alt="Ícone do Twitter" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+        </div>
+        
+        <nav style="margin-top: 10px; font-size: 0.8em;">
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossa política de privacidade">Política de Privacidade</a>
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossos termos de serviço">Termos de Serviço</a>
+        </nav>
+        
+        <style>
+            a:hover {
+                color: var(--cor-acento); /* Muda a cor ao passar o mouse */
+                text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+            }
+            
+            div img {
+                transition: transform 0.3s; /* Transição suave para a animação */
+            }
+            
+            div img:hover {
+                transform: scale(1.1); /* Aumenta o tamanho do ícone ao passar o mouse */
+            }
+            
+            @media (max-width: 600px) {
+                footer {
+                    font-size: 0.9em; /* Ajusta o tamanho da fonte em dispositivos menores */
+                }
+                div, nav {
+                    margin: 5px 0; /* Reduz margens em dispositivos menores */
+                }
+            }
+        </style>
+    </footer>
+</body>
+</html>

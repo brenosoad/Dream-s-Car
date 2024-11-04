@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Carros - DREAM CAR'S</title>
+    <meta name="description" content="Confira as últimas notícias e dicas sobre o mundo automotivo no blog da DREAM CAR'S.">
+    <meta name="keywords" content="blog de carros, notícias automotivas, dicas, DREAM CAR'S">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-primaria: #000000;
+            --cor-secundaria: #333333;
+            --cor-fundo: #f4f4f4;
+            --cor-texto: #ffffff;
+            --cor-texto-escuro: #222222;
+            --cor-acento: #CDAA00;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--cor-texto-escuro);
+            background-color: var(--cor-fundo);
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: var(--cor-texto);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            transition: color 0.3s, background 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            color: var(--cor-fundo);
+            background: var(--cor-acento);
+        }
+
+        .hero {
+            background: url('https://mlqt0se4pk9p.i.optimole.com/q:85/https://www.autodata.com.br/wordpress/wp-content/uploads//2024/10/files__image_b43d7852-521b-4d03-bbae-a2d6504e0ed2-scaled.jpg') no-repeat center center/cover;
+            height: 45vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+
+        .posts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .post-card {
+            background: #fff;
+            border: 1px solid var(--cor-secundaria);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .post-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .post-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .post-card h3 {
+            color: var(--cor-acento);
+            margin-top: 15px;
+            font-size: 1.5em;
+        }
+
+        .post-card p {
+            margin: 10px 0;
+            color: var(--cor-secundaria);
+        }
+
+        .post-card a {
+            display: inline-block;
+            color: var(--cor-acento);
+            text-decoration: none;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        .post-card a:hover {
+            color: #BFAF00;
+        }
+
+        .comunidade {
+            background-color: var(--cor-secundaria);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            color: var(--cor-texto);
+            margin: 30px 0;
+        }
+
+        .comunidade h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .comunidade p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .comunidade button {
+            background-color: var(--cor-acento);
+            color: var(--cor-texto);
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .comunidade button:hover {
+            background-color: #BFAF00;
+        }
+
+        footer {
+            background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: var(--cor-texto);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: var(--cor-texto);
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--cor-acento);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DREAM CAR'S</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="financiamento.html">Financiamento</a></li>
+                <li><a href="vender.html">Vender Seu Carro</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Últimas Notícias Automotivas</h1>
+        <p>Fique por dentro das tendências e dicas no mercado de automóveis</p>
+    </div>
+
+    <main class="container">
+        <section id="noticias">
+            <h2>Posts Recentes</h2>
+            <div class="posts-container">
+                <div class="post-card">
+                    <img src="https://i.imgur.com/vUSntxy.png" alt="Título da notícia 1">
+                    <h3>Como Avaliar o Valor de Revenda do Seu Carro</h3>
+                    <p>Aprenda os principais fatores que influenciam na avaliação de veículos e maximize o valor na venda.</p>
+                    <a href="post1.html">Leia mais</a>
+                </div>
+                <div class="post-card">
+                    <img src="https://i.imgur.com/Y7nchEO.jpeg" alt="Título da notícia 2">
+                    <h3>Tendências do Mercado de Carros Usados em 2024</h3>
+                    <p>Veja como o mercado de usados está crescendo e as melhores opções para compradores e vendedores.</p>
+                    <a href="post2.html">Leia mais</a>
+                </div>
+                <div class="post-card">
+                    <img src="https://i.imgur.com/jF1QXUq.png" alt="Título da notícia 3">
+                    <h3>Cuidados Essenciais Antes de Vender Seu Carro</h3>
+                    <p>Saiba quais manutenções e cuidados são importantes para aumentar o valor de venda do seu carro.</p>
+                    <a href="post3.html">Leia mais</a>
+                </div>
+                <div class="post-card">
+                    <img src="https://i.imgur.com/aM49mLq.png" alt="Título da notícia 4">
+                    <h3>Comparativo: Financiamento vs Leasing</h3>
+                    <p>Descubra as principais diferenças entre financiar ou fazer leasing de um veículo e escolha a melhor opção.</p>
+                    <a href="post4.html">Leia mais</a>
+                </div>
+                <div class="post-card">
+                    <img src="https://i.imgur.com/kKCK7Ik.png" alt="Título da notícia 5">
+                    <h3>Os Melhores SUVs para Famílias em 2024</h3>
+                    <p>Confira os SUVs que oferecem mais segurança, conforto e espaço para toda a família.</p>
+                    <a href="post5.html">Leia mais</a>
+                </div>
+                <div class="post-card">
+                    <img src="https://i.imgur.com/4wwtPc7.png" alt="Título da notícia 6">
+                    <h3>Como Escolher o Seguro Ideal para o Seu Veículo</h3>
+                    <p>Saiba quais fatores considerar ao escolher um seguro automotivo para garantir a melhor cobertura.</p>
+                    <a href="post6.html">Leia mais</a>
+                </div>
+                <div class="post-card">
+                    <img src="https://i.imgur.com/2X02oCx.png" alt="Título da notícia 7">
+                    <h3>Comparativo de Consumo: Carros Elétricos vs Híbridos</h3>
+                    <p>Descubra as diferenças de consumo entre carros elétricos e híbridos e escolha a melhor opção para você.</p>
+                    <a href="post7.html">Leia mais</a>
+                </div>      
+                <div class="post-card">
+                    <img src="https://i.imgur.com/A3LAtiK.png" alt="Título da notícia 8">
+                    <h3>Como Financiar o Seu Primeiro Carro</h3>
+                    <p>Dicas valiosas para financiar seu primeiro veículo de forma inteligente, sem prejudicar seu orçamento. Evite comprometer suas finanças com escolhas conscientes e planejadas.</p>
+                    <a href="post8.html">Leia mais</a>
+                </div>
+                <div class="post-card">
+                    <img src="https://i.imgur.com/NYJJYtA.png" alt="Título da notícia 7">
+                    <h3>Chery Estaria Comprando a Maserati</h3>
+                    <p>Rumores indicam que a Chery está negociando a compra da Maserati, o que poderia expandir sua presença na Ásia e reduzir custos.</p>
+                    <a href="post9.html">Leia mais</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="comunidade">
+            <h2>Junte-se à Nossa Comunidade!</h2>
+            <p>Conecte-se com outros entusiastas de carros, tire suas dúvidas e compartilhe suas experiências em um ambiente acolhedor e dinâmico. Não perca a oportunidade de aprender e crescer com pessoas que compartilham a mesma paixão!</p>
+            <a href="https://chat.whatsapp.com/HETKQ6VGR7NIalzysxB2od" target="_blank">
+                <button>Participe Agora</button>
+            </a>
+        </section>        
+        
+    </main>
+
+    <footer style="background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%); color: var(--cor-texto); text-align: center; padding: 20px; border-top: 3px solid var(--cor-acento); font-family: 'Montserrat', sans-serif;">
+        <p style="margin: 5px 0;">&copy; 2024 DREAM CAR'S. Todos os direitos reservados.</p>
+        
+        <div id="contato" style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Contato</h3>
+            <p>Email: <a href="mailto:contato@dreamcars.com" style="color: var(--cor-acento); text-decoration: none;" title="Enviar email para contato@dreamcars.com">contato@dreamcars.com</a></p>
+        </div>
+        
+        <div style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Siga-nos</h3>
+            <a href="https://www.facebook.com/dreamcars" aria-label="Facebook" title="Siga-nos no Facebook" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png" alt="Ícone do Facebook" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://www.instagram.com/dreamcars" aria-label="Instagram" title="Siga-nos no Instagram" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Ícone do Instagram" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://wa.me/5511999999999" aria-label="WhatsApp" title="Entre em contato pelo WhatsApp" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Ícone do WhatsApp" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://twitter.com/dreamcars" aria-label="Twitter" title="Siga-nos no Twitter" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://freepnglogo.com/images/all_img/1691832581twitter-x-icon-png.png" alt="Ícone do Twitter" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+        </div>
+        
+        <nav style="margin-top: 10px; font-size: 0.8em;">
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossa política de privacidade">Política de Privacidade</a>
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossos termos de serviço">Termos de Serviço</a>
+        </nav>
+        
+        <style>
+            a:hover {
+                color: var(--cor-acento); /* Muda a cor ao passar o mouse */
+                text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+            }
+            
+            div img {
+                transition: transform 0.3s; /* Transição suave para a animação */
+            }
+            
+            div img:hover {
+                transform: scale(1.1); /* Aumenta o tamanho do ícone ao passar o mouse */
+            }
+            
+            @media (max-width: 600px) {
+                footer {
+                    font-size: 0.9em; /* Ajusta o tamanho da fonte em dispositivos menores */
+                }
+                div, nav {
+                    margin: 5px 0; /* Reduz margens em dispositivos menores */
+                }
+            }
+        </style>
+    </footer>
+</body>
+</html>

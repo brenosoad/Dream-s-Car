@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financiamento - DREAM CAR'S</title>
+    <meta name="description" content="Descubra as melhores opções de financiamento para adquirir seu carro dos sonhos.">
+    <meta name="keywords" content="financiamento, carros, empréstimos, opções de pagamento">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-primaria: #000000;
+            --cor-secundaria: #333333;
+            --cor-fundo: #f4f4f4;
+            --cor-texto: #ffffff;
+            --cor-texto-escuro: #222222;
+            --cor-acento: #CDAA00; /* Tom de dourado mais escuro */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--cor-texto-escuro);
+            background-color: var(--cor-fundo);
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: var(--cor-texto);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            transition: color 0.3s, background 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            color: var(--cor-fundo);
+            background: var(--cor-acento);
+        }
+
+        .hero {
+            background: url('https://vitessemotors.com.br/images/banner.jpg') no-repeat center center/cover;
+            height: 45vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            border-bottom: 2px solid var(--cor-primaria);
+            padding: 20px 0;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: var(--cor-acento);
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid var(--cor-secundaria);
+            border-radius: 5px;
+            box-sizing: border-box; /* Adicionado para garantir que o padding não afete a largura total */
+        }
+
+        .form-container button {
+            background: var(--cor-acento);
+            color: var(--cor-texto);
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #BFAF00; /* Tom de dourado mais escuro */
+        }
+
+        .accordion {
+            border: 1px solid var(--cor-secundaria);
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .accordion h3 {
+            padding: 10px;
+            cursor: pointer;
+            background: var(--cor-acento);
+            color: var(--cor-texto);
+            margin: 0;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background: #fff;
+        }
+
+        footer {
+            background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: var(--cor-texto);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: var(--cor-texto);
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--cor-acento);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DREAM CAR'S</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="financiamento.html">Financiamento</a></li>
+                <li><a href="vender.html">Vender Seu Carro</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Financiamento Acessível</h1>
+        <p>Descubra as melhores opções de financiamento para o seu carro dos sonhos.</p>
+    </div>
+
+    <main class="container">
+        <section id="opcoes-financiamento">
+            <h2>Opções de Financiamento</h2>
+            <p>Oferecemos diversas opções de financiamento para atender às suas necessidades. Escolha o que melhor se adapta ao seu orçamento:</p>
+            <ul>
+                <li><strong>Parcelamento em até 60 vezes:</strong> Pague seu carro em até 60 meses com taxas competitivas.</li>
+                <li><strong>Financiamento com entrada:</strong> Faça uma entrada e parcele o restante.</li>
+                <li><strong>Taxas de juros a partir de 1,5% ao mês:</strong> Condições especiais para veículos novos.</li>
+            </ul>
+        </section>
+
+        <section class="form-container">
+            <h2>Solicite uma Simulação</h2>
+            <form action="#" method="post">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <input type="text" name="telefone" placeholder="Seu Telefone" required>
+                <select name="carro" required>
+                    <option value="">Escolha o Carro</option>
+                    <option value="Uno com Body Kit - Fiat">Uno com Body Kit - Fiat (Destaque) ☆</option>
+                    <option value="Audi R8 - Audi">Audi R8 - Audi (Destaque) ☆ </option>
+                    <option value="Lamborghini Huracán - Lamborghini">Lamborghini Huracán - Lamborghini (Destaque) ☆</option>
+                    <option value="Mustang - Ford">Mustang - Ford (Destaque) ☆</option>
+                    <option value="Camaro - Chevrolet">Camaro - Chevrolet (Destaque) ☆</option>
+                    <option value="Corolla - Toyota">Corolla - Toyota (Destaque) ☆</option>
+                    <option value="Class A - Mercedes-Benz">Class A - Mercedes-Benz (Destaque) ☆</option>
+                    <option value="Série 3 - BMW">Série 3 - BMW (Destaque) ☆</option>
+                    <option value="Civic - Honda">Civic - Honda (Destaque) ☆</option>
+                    <option value="Fusca - Volkswagen">Fusca - Volkswagen (Destaque) ☆</option>
+                    <option value="Civic - Honda (Catálogo)">Civic - Honda (Catálogo)</option>
+                    <option value="Fista - Ford (Catálogo)">Fista - Ford (Catálogo)</option>
+                    <option value="Corolla - Toyota (Catálogo)">Corolla - Toyota (Catálogo)</option>
+                    <option value="Onix - Chevrolet (Catálogo)">Onix - Chevrolet (Catálogo)</option>
+                    <option value="Palio - Fiat (Catálogo)">Palio - Fiat (Catálogo)</option>
+                    <option value="Kwid - Renault (Catálogo)">Kwid - Renault (Catálogo)</option>
+                    <option value="T-Cross - Volkswagen (Catálogo)">T-Cross - Volkswagen (Catálogo)</option>
+                    <option value="HR-V - Honda (Catálogo)">HR-V - Honda (Catálogo)</option>
+                    <option value="Captur - Renault (Catálogo)">Captur - Renault (Catálogo)</option>
+                    <option value="C4-Cactus - Citroën (Catálogo)">C4-Cactus - Citroën (Catálogo)</option>
+                    <option value="Renegade - Jeep (Catálogo)">Renegade - Jeep (Catálogo)</option>
+                    <option value="S10 - Chevrolet (Catálogo)">S10 - Chevrolet (Catálogo)</option>
+                    <option value="Hilux - Toyota (Catálogo)">Hilux - Toyota (Catálogo)</option>
+                    <option value="Audi A3 - Audi (Catálogo)">Audi A3 - Audi (Catálogo)</option>
+                    <option value="Mobi - Fiat (Catálogo)">Mobi - Fiat (Catálogo)</option>
+                    <option value="Jetta GLI - Volkswagen (Catálogo)">Jetta GLI - Volkswagen (Catálogo)</option>
+                    <option value="Civic SI - Honda (Catálogo)">Civic SI - Honda (Catálogo)</option>
+                    <option value="Range Rover Evoque - Land Rover (Catálogo)">Range Rover Evoque - Land Rover (Catálogo)</option>
+                    <option value="Mustang - Ford (Catálogo)">Mustang - Ford (Catálogo)</option>
+                    <option value="3008 - Peugeot (Catálogo)">3008 - Peugeot (Catálogo)</option>
+                    <option value="Nivus - Volkswagen (Catálogo)">Nivus - Volkswagen (Catálogo)</option>
+                    <option value="300C Chrysler (Catálogo)">300C Chrysler (Catálogo)</option>
+                    <option value="C4 Lounge - Citroën (Catálogo)">C4 Lounge - Citroën (Catálogo)</option>
+                    <option value="Tiggo 5X - Chery (Catálogo)">Tiggo 5X - Chery (Catálogo)</option>
+                    <option value="Tracker - Chevrolet (Catálogo)">Tracker - Chevrolet (Catálogo)</option>
+                    <option value="Lancer - Mitsubishi (Catálogo)">Lancer - Mitsubishi (Catálogo)</option>
+                    <option value="CR-V - Honda (Catálogo)">CR-V - Honda (Catálogo)</option>
+                    <option value="Tiguan - Volkswagen (Catálogo)">Tiguan - Volkswagen (Catálogo)</option>
+                    <option value="X1 - BMW (Catálogo)">X1 - BMW (Catálogo)</option>
+                </select>                
+                <button type="submit">Solicitar Simulação</button>
+            </form>
+        </section>
+        <section class="accordion">
+            <h3>FAQs</h3>
+            <div class="accordion-content">
+                <p><strong>Qual a documentação necessária?</strong></p>
+                <p>É necessário RG, CPF, comprovante de renda e residência.</p>
+                <p><strong>Posso financiar carros usados?</strong></p>
+                <p>Sim, oferecemos financiamento para veículos novos e usados.</p>
+                <p><strong>Quais as taxas de juros?</strong></p>
+                <p>Nossas taxas começam a partir de 1,5% ao mês.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%); color: var(--cor-texto); text-align: center; padding: 20px; border-top: 3px solid var(--cor-acento); font-family: 'Montserrat', sans-serif;">
+        <p style="margin: 5px 0;">&copy; 2024 DREAM CAR'S. Todos os direitos reservados.</p>
+        
+        <div id="contato" style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Contato</h3>
+            <p>Email: <a href="mailto:contato@dreamcars.com" style="color: var(--cor-acento); text-decoration: none;" title="Enviar email para contato@dreamcars.com">contato@dreamcars.com</a></p>
+        </div>
+        
+        <div style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Siga-nos</h3>
+            <a href="https://www.facebook.com/dreamcars" aria-label="Facebook" title="Siga-nos no Facebook" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png" alt="Ícone do Facebook" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://www.instagram.com/dreamcars" aria-label="Instagram" title="Siga-nos no Instagram" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Ícone do Instagram" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://wa.me/5511999999999" aria-label="WhatsApp" title="Entre em contato pelo WhatsApp" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Ícone do WhatsApp" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://twitter.com/dreamcars" aria-label="Twitter" title="Siga-nos no Twitter" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://freepnglogo.com/images/all_img/1691832581twitter-x-icon-png.png" alt="Ícone do Twitter" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+        </div>
+        
+        <nav style="margin-top: 10px; font-size: 0.8em;">
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossa política de privacidade">Política de Privacidade</a>
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossos termos de serviço">Termos de Serviço</a>
+        </nav>
+        
+        <style>
+            a:hover {
+                color: var(--cor-acento); /* Muda a cor ao passar o mouse */
+                text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+            }
+            
+            div img {
+                transition: transform 0.3s; /* Transição suave para a animação */
+            }
+            
+            div img:hover {
+                transform: scale(1.1); /* Aumenta o tamanho do ícone ao passar o mouse */
+            }
+            
+            @media (max-width: 600px) {
+                footer {
+                    font-size: 0.9em; /* Ajusta o tamanho da fonte em dispositivos menores */
+                }
+                div, nav {
+                    margin: 5px 0; /* Reduz margens em dispositivos menores */
+                }
+            }
+        </style>
+    </footer>
+    <script>
+        document.querySelector('.accordion h3').addEventListener('click', function() {
+            const content = document.querySelector('.accordion-content');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
+</body>
+</html>

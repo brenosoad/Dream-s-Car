@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Carros - DREAM CAR'S</title>
+    <meta name="description" content="Venda seu carro de forma rápida e fácil com a DREAM CAR'S.">
+    <meta name="keywords" content="venda de carros, avaliação, carros, venda, DREAM CAR'S">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-primaria: #000000;
+            --cor-secundaria: #333333;
+            --cor-fundo: #f4f4f4;
+            --cor-texto: #ffffff;
+            --cor-texto-escuro: #222222;
+            --cor-acento: #CDAA00;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--cor-texto-escuro);
+            background-color: var(--cor-fundo);
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: var(--cor-texto);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            transition: color 0.3s, background 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            color: var(--cor-fundo);
+            background: var(--cor-acento);
+        }
+
+        .hero {
+            background: url('https://www.jcmsveiculos.com.br/wp-content/webp-express/webp-images/uploads/2024/05/venda-seu-carro-1.png.webp') no-repeat center center/cover;
+            height: 45vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            border-bottom: 2px solid var(--cor-primaria);
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: var(--cor-acento);
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid var(--cor-secundaria);
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container input::placeholder {
+            color: var(--cor-secundaria);
+        }
+
+        .form-container button {
+            background: var(--cor-acento);
+            color: var(--cor-texto);
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #BFAF00;
+        }
+
+        .benefit {
+            background: #fff;
+            border: 1px solid var(--cor-secundaria);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: box-shadow 0.3s;
+        }
+
+        .benefit:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .benefit h3 {
+            color: var(--cor-acento);
+        }
+
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--cor-acento);
+            color: var(--cor-texto);
+            border: none;
+            border-radius: 5px;
+            padding: 8px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #back-to-top:hover {
+            background: #BFAF00;
+        }
+
+        footer {
+            background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: var(--cor-texto);
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: var(--cor-texto);
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--cor-acento);
+        }
+
+        .parceiros-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .parceiro {
+            flex: 1;
+            margin: 10px;
+            max-width: 150px;
+            text-align: center; /* Centraliza a imagem */
+        }
+
+        .parceiro img {
+            max-width: 100%;
+            height: 80px; /* Tamanho fixo para as imagens */
+            object-fit: contain; /* Mantém a proporção da imagem */
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DREAM CAR'S</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="financiamento.html">Financiamento</a></li>
+                <li><a href="vender.html">Vender Seu Carro</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Venda Seu Carro Conosco</h1>
+        <p>Transforme seu carro em dinheiro de forma rápida e segura.</p>
+    </div>
+
+    <main class="container">
+        <section id="beneficios-venda">
+            <h2>Por Que Vender Conosco?</h2>
+            <p>Descubra as vantagens de escolher a DREAM CAR'S:</p>
+            <div class="benefit">
+                <h3>Avaliação Sem Compromisso</h3>
+                <p>Avaliamos seu veículo gratuitamente, oferecendo uma estimativa justa e transparente.</p>
+            </div>
+            <div class="benefit">
+                <h3>Transação Segura</h3>
+                <p>Garantimos um processo de venda seguro e confiável, protegendo seus dados e transações.</p>
+            </div>
+            <div class="benefit">
+                <h3>Atendimento Personalizado</h3>
+                <p>Nossa equipe está pronta para te ajudar em cada etapa, garantindo uma experiência única e satisfatória.</p>
+            </div>
+            <div class="benefit">
+                <h3>Processo Rápido e Eficiente</h3>
+                <p>Com nossa abordagem ágil, você pode vender seu carro em pouco tempo e com facilidade.</p>
+            </div>
+            <div class="benefit">
+                <h3>Condições de Pagamento Flexíveis</h3>
+                <p>Oferecemos opções de pagamento que se adaptam às suas necessidades, tornando a venda ainda mais conveniente.</p>
+            </div>
+        </section>
+
+        <section id="parceiros">
+            <h2>Nossos Parceiros</h2>
+            <p>Trabalhamos com as melhores marcas do mercado para garantir a melhor experiência na venda do seu carro.</p>
+            <div class="parceiros-container">
+                <div class="parceiro">
+                    <img src="https://cdn.worldvectorlogo.com/logos/ford-logo-flat.svg" alt="Ford" />
+                </div>
+                <div class="parceiro">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Volkswagen_Logo_till_1995.svg/2048px-Volkswagen_Logo_till_1995.svg.png" alt="Volkswagen" />
+                </div>
+                <div class="parceiro">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Fiat_logo.svg/2560px-Fiat_logo.svg.png" alt="Fiat" />
+                </div>
+                <div class="parceiro">
+                    <img src="https://live.staticflickr.com/65535/52076921802_7187661d17_o.png" alt="Toyota" />
+                </div>
+                <div class="parceiro">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/600px-BMW.svg.png" alt="BMW" />
+                </div>
+            </div>
+        </section>
+
+        <section class="form-container">
+            <h2>Solicite sua Avaliação Gratuita</h2>
+            <form action="#" method="post">
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <input type="text" name="telefone" placeholder="Seu Telefone" required>
+                <input type="text" name="modelo" placeholder="Modelo do Carro" required>
+                <input type="text" name="ano" placeholder="Ano do Carro (ex: 2020)" required>
+                <select name="condicao" required>
+                    <option value="" disabled selected>Condição do Carro</option>
+                    <option value="novo">Novo</option>
+                    <option value="seminovo">Seminovo</option>
+                    <option value="usado">Usado</option>
+                </select>
+                <label for="tipo-observacao">Tipo de Observação</label>
+                <select name="tipo-observacao" id="tipo-observacao">
+                    <option value="" disabled selected>Selecione um tipo</option>
+                    <option value="manutencao">Manutenção</option>
+                    <option value="acessorios">Acessórios</option>
+                    <option value="defeitos">Defeitos</option>
+                    <option value="outros">Outros</option>
+                </select>
+                <button type="submit">Solicitar Avaliação</button>
+            </form>
+        </section>        
+    </main>
+
+    <button id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+    <footer style="background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%); color: var(--cor-texto); text-align: center; padding: 20px; border-top: 3px solid var(--cor-acento); font-family: 'Montserrat', sans-serif;">
+        <p style="margin: 5px 0;">&copy; 2024 DREAM CAR'S. Todos os direitos reservados.</p>
+        
+        <div id="contato" style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Contato</h3>
+            <p>Email: <a href="mailto:contato@dreamcars.com" style="color: var(--cor-acento); text-decoration: none;" title="Enviar email para contato@dreamcars.com">contato@dreamcars.com</a></p>
+        </div>
+        
+        <div style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Siga-nos</h3>
+            <a href="https://www.facebook.com/dreamcars" aria-label="Facebook" title="Siga-nos no Facebook" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png" alt="Ícone do Facebook" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://www.instagram.com/dreamcars" aria-label="Instagram" title="Siga-nos no Instagram" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Ícone do Instagram" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://wa.me/5511999999999" aria-label="WhatsApp" title="Entre em contato pelo WhatsApp" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Ícone do WhatsApp" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://twitter.com/dreamcars" aria-label="Twitter" title="Siga-nos no Twitter" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://freepnglogo.com/images/all_img/1691832581twitter-x-icon-png.png" alt="Ícone do Twitter" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+        </div>
+        
+        <nav style="margin-top: 10px; font-size: 0.8em;">
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossa política de privacidade">Política de Privacidade</a>
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossos termos de serviço">Termos de Serviço</a>
+        </nav>
+        
+        <style>
+            a:hover {
+                color: var(--cor-acento); /* Muda a cor ao passar o mouse */
+                text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+            }
+            
+            div img {
+                transition: transform 0.3s; /* Transição suave para a animação */
+            }
+            
+            div img:hover {
+                transform: scale(1.1); /* Aumenta o tamanho do ícone ao passar o mouse */
+            }
+            
+            @media (max-width: 600px) {
+                footer {
+                    font-size: 0.9em; /* Ajusta o tamanho da fonte em dispositivos menores */
+                }
+                div, nav {
+                    margin: 5px 0; /* Reduz margens em dispositivos menores */
+                }
+            }
+        </style>
+    </footer> 
+
+    <script>
+        // Mostrar o botão quando rolar para baixo
+        window.onscroll = function() {
+            const button = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        // Voltar ao topo ao clicar no botão
+        document.getElementById("back-to-top").onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
+</body>
+</html>

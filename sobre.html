@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - DREAM CAR'S</title>
+    <meta name="description" content="Conheça a DREAM CAR'S, sua melhor opção na compra e venda de veículos.">
+    <meta name="keywords" content="carros, compra, venda, veículos, DREAM CAR'S">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-primaria: #000000;
+            --cor-secundaria: #333333;
+            --cor-fundo: #f4f4f4;
+            --cor-texto: #ffffff;
+            --cor-texto-escuro: #222222;
+            --cor-acento: #FFAA00;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--cor-texto-escuro);
+            background-color: var(--cor-fundo);
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: var(--cor-texto);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border: none;
+            box-shadow: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--cor-texto);
+            text-decoration: none;
+            transition: color 0.3s, background 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover, nav ul li a:focus {
+            color: var(--cor-fundo);
+            background: var(--cor-acento);
+        }
+
+        .hero {
+            background: url('https://saopauloparacriancas.com.br/wp-content/uploads/2023/11/DSC1303.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1;
+        }
+
+        .hero h1, .hero h2 {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero h2 {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+            color: var(--cor-texto);
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        footer a {
+            color: var(--cor-texto);
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--cor-acento);
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: var(--cor-acento);
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+
+        .values {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .value {
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .value h3 {
+            margin: 10px 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .testimonials {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .testimonials li {
+            background: #f9f9f9;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex: 0 0 auto;
+            min-width: 300px;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta button {
+            background-color: var(--cor-acento);
+            color: var(--cor-texto);
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta button:hover {
+            background-color: var(--cor-primaria);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--cor-acento);
+            color: var(--cor-texto);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+            z-index: 1000;
+            display: none;
+        }
+
+        #back-to-top:hover {
+            background-color: var(--cor-primaria);
+        }
+
+        @media (max-width: 768px) {
+            .values {
+                flex-direction: column;
+                align-items: center;
+            }
+            .value {
+                margin: 10px 0;
+            }
+            .testimonials {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: var(--cor-acento);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DREAM CAR'S</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="financiamento.html">Financiamento</a></li>
+                <li><a href="vender.html">Vender Seu Carro</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Bem-vindo à DREAM CAR'S</h1>
+        <h2>Oferecemos soluções inovadoras e de qualidade, sempre focados na satisfação do cliente.</h2>
+    </div>
+
+    <div class="container">
+        <section>
+            <h2>Quem Somos</h2>
+            <p>Somos uma empresa especializada na compra e venda de veículos, oferecendo as melhores oportunidades do mercado, com opções selecionadas para atender às suas necessidades e garantir a melhor experiência na aquisição do seu carro.</p>
+        </section>
+        
+        <hr>
+
+        <section>
+            <h2>Nossos Serviços</h2>
+            <ul>
+                <li>Compra e venda de veículos novos e usados</li>
+                <li>Financiamento facilitado</li>
+                <li>Avaliação gratuita do seu carro</li>
+                <li>Consultoria personalizada para a escolha do veículo ideal</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Valores</h2>
+            <div class="values">
+                <div class="value">
+                    <h3>Integridade</h3>
+                    <p>Atuamos com ética e honestidade em todas as nossas negociações.</p>
+                </div>
+                <div class="value">
+                    <h3>Transparência</h3>
+                    <p>Garantimos um relacionamento de confiança e transparência com nossos clientes em cada transação.</p>
+                </div>
+                <div class="value">
+                    <h3>Satisfação</h3>
+                    <p>Nosso compromisso é assegurar a total satisfação dos nossos clientes.</p>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <section>
+            <h2>Nossa História</h2>
+            <p>Fundada em 2020, a DREAM CAR'S surgiu com a missão de simplificar e tornar mais acessível o processo de compra e venda de veículos, oferecendo soluções práticas e eficientes para todos os perfis de clientes.</p>
+        </section>
+        
+        <hr>
+
+        <section>
+            <h2>Depoimentos</h2>
+            <ul class="testimonials">
+                <li>"A DREAM CAR'S me ajudou a encontrar o carro perfeito! O processo foi rápido e fácil." - João</li>
+                <li>"Ótimo atendimento e transparência em todas as etapas." - Maria</li>
+                <li>"Recomendo para quem quer vender seu carro com segurança e rapidez." - Paulo</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <div class="cta">
+            <h2>Não espere mais! Encontre seu carro dos sonhos hoje mesmo.</h2>
+            <button onclick="window.location.href='catalogo.html'">Explore nosso Catálogo</button>
+        </div>
+        
+    </div>
+    
+    <footer style="background: linear-gradient(90deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%); color: var(--cor-texto); text-align: center; padding: 20px; border-top: 3px solid var(--cor-acento); font-family: 'Montserrat', sans-serif;">
+        <p style="margin: 5px 0;">&copy; 2024 DREAM CAR'S. Todos os direitos reservados.</p>
+        
+        <div id="contato" style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Contato</h3>
+            <p>Email: <a href="mailto:contato@dreamcars.com" style="color: var(--cor-acento); text-decoration: none;" title="Enviar email para contato@dreamcars.com">contato@dreamcars.com</a></p>
+        </div>
+        
+        <div style="margin: 10px 0; border-bottom: 1px solid var(--cor-acento); padding-bottom: 10px;">
+            <h3 style="margin: 5px 0; font-size: 1.5em; color: var(--cor-acento); font-weight: bold;">Siga-nos</h3>
+            <a href="https://www.facebook.com/dreamcars" aria-label="Facebook" title="Siga-nos no Facebook" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png" alt="Ícone do Facebook" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://www.instagram.com/dreamcars" aria-label="Instagram" title="Siga-nos no Instagram" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Ícone do Instagram" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://wa.me/5511999999999" aria-label="WhatsApp" title="Entre em contato pelo WhatsApp" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Ícone do WhatsApp" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+            <a href="https://twitter.com/dreamcars" aria-label="Twitter" title="Siga-nos no Twitter" style="margin: 0 10px; text-decoration: none; transition: transform 0.3s;" rel="noopener noreferrer" target="_blank">
+                <img src="https://freepnglogo.com/images/all_img/1691832581twitter-x-icon-png.png" alt="Ícone do Twitter" style="width: 30px; height: 30px; vertical-align: middle; border: none;">
+            </a>
+        </div>
+        
+        <nav style="margin-top: 10px; font-size: 0.8em;">
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossa política de privacidade">Política de Privacidade</a>
+            <a href="#" style="color: var(--cor-texto); text-decoration: none; margin: 0 10px;" title="Leia nossos termos de serviço">Termos de Serviço</a>
+        </nav>
+        
+        <style>
+            a:hover {
+                color: var(--cor-acento); /* Muda a cor ao passar o mouse */
+                text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+            }
+            
+            div img {
+                transition: transform 0.3s; /* Transição suave para a animação */
+            }
+            
+            div img:hover {
+                transform: scale(1.1); /* Aumenta o tamanho do ícone ao passar o mouse */
+            }
+            
+            @media (max-width: 600px) {
+                footer {
+                    font-size: 0.9em; /* Ajusta o tamanho da fonte em dispositivos menores */
+                }
+                div, nav {
+                    margin: 5px 0; /* Reduz margens em dispositivos menores */
+                }
+            }
+        </style>
+    </footer>
+    <button id="back-to-top" style="display: none;">↑</button>
+
+    <script>
+        window.onscroll = function() {
+            const button = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        document.getElementById("back-to-top").onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    </script>
+</body>
+</html>
